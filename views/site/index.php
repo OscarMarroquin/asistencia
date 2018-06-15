@@ -2,16 +2,16 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'ZEUS';
+$this->title = 'My Yii Application';
 ?>
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>BIENVENIDOS</h1>
+        <h1>100 SIN VER!</h1>
 
-        <p class="lead">LABORATORIO DE REDES</p>
+        <p class="lead">You have successfully created your Yii-powered application.</p>
 
-        <p><a class="btn btn-lg btn-success" href="http://itsescarcega.edu.mx">Ingresar a ITSE</a></p>
+        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
     </div>
 
     <div class="body-content">
