@@ -1,0 +1,13 @@
+INICIO							|Contenido.php
+COLEGIOS						|Colegios.php
+USUARIOS						|Usuarios.php
+PROFESION						|Profesion.php
+DOCENTES						|Docente.php
+BIMESTRE						|Semestre.php
+GRUPOS							|Grupos.php
+ALUMNOS							|Alumnos.php
+MATERIAS						|Materias.php
+DOCUMENTOS						|Documentos.php
+CONSULTAR						|EligeMateriaGrupo.php
+LOGIN							|Login.php
+LOGOUT							|Logout.php
