@@ -20,20 +20,20 @@
 		
 		if($id!=0){
 			$sqs = "UPDATE materias SET CODIGO='".$txtCodigo."',DESCRIPCION='".$txtMateria."', ID_SEMESTRE='".$Semestre."', GRUPO='".$group."' WHERE ID='".$id."'";
-			mysql_query($sqs,$conexion);			
+			mysqli_query($sqs,$conexion);			
 			$mensaje = '<br/><div class="information-box round">'."Informacion Actualizada Correctamente</div>".$refresh;
 		}
 		if($id==0){
 			$sqlx = "SELECT * FROM materias WHERE DESCRIPCION LIKE '%".$txtMateria."%' AND ID_SEMESTRE='".$Semestre."'";
-			$rsx  = mysql_query($sqlx,$conexion);
-			if(mysql_num_rows($rsx)!=0){
-				$rows    = mysql_fetch_assoc($rsx);
+			$rsx  = mysqli_query($conexion,$sqlx);
+			if(mysqli_num_rows($rsx)!=0){
+				$rows    = mysqli_fetch_assoc($rsx);
 				$mensaje = '<br/><div class="error-box round">'."Existe una Materia Similar: ".$rows['DESCRIPCION']."</div>";
 			}else{
 				
 				$sqls 	= "INSERT INTO materias(CODIGO,DESCRIPCION,ID_SEMESTRE,GRUPO) VALUES (";
 				$sqls   = $sqls."'".$txtCodigo."','".$txtMateria."','".$Semestre."','".$group."')";
-				mysql_query($sqls,$conexion);			
+				mysqli_query($conexion,$sqls);			
 				$mensaje = '<br/><div class="information-box round">'."Registros Guardados Correctamente</div>".$refresh;
 			}
 		}

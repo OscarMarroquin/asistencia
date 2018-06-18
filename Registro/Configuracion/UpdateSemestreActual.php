@@ -16,8 +16,8 @@
 	}else{
 		/**/
 		$sls  = "SELECT ID FROM alumno_semestre_grupo WHERE ID_GRUPO ='".$Grupo."' AND ID_SEMESTRE='".$Semestre."' AND ID_ALUMNO='".$id."'";
-		$rss  = mysql_query($sls,$conexion);
-		if(mysql_num_rows($rss)!=0){
+		$rss  = mysqli_query($conexion,$sls);
+		if(mysqli_num_rows($rss)!=0){
 			$mensaje = '<div class="error-box round">'."No Puedes Elegir el Mismo Grupo y Semestre</div>";
 		}else{
 			 /*Verificamos que no se regrese de semestre*/

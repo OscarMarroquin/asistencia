@@ -10,19 +10,19 @@
 		
 		if($id!=0){
 			$slx  = "UPDATE grupos SET DESCRIPCION='".$txtGrupo."' WHERE ID='".$id."'";
-			mysql_query($slx,$conexion);			
+			mysqli_query($conexion,$slx);			
 			$mensaje = '<br/><div class="information-box round">'."Informacion Actualizada Correctamente</div>".$refresh;
 		}
 		if($id==0){
 			$sqlx = "SELECT DESCRIPCION FROM grupos WHERE DESCRIPCION LIKE '".$txtGrupo."'";
-			$rsx  = mysql_query($sqlx,$conexion);
-			if(mysql_num_rows($rsx)!=0){
-				$row = mysql_fetch_assoc($rsx);
+			$rsx  = mysqli_query($conexion,$sqlx);
+			if(mysqli_num_rows($rsx)!=0){
+				$row = mysqli_fetch_assoc($rsx);
 				$mensaje = '<br/><div class="error-box round">'." Existe un Grupo Similar: ".$row['DESCRIPCION']."</div>";
 			}else{
 				
 				$sqls 	= "INSERT INTO grupos(DESCRIPCION) VALUES ('".$txtGrupo."')";
-				mysql_query($sqls,$conexion);			
+				mysqli_query($conexion,$sqls);			
 				$mensaje = '<br/><div class="information-box round">'."Registros Guardados Correctamente</div>".$refresh;
 			}
 		}

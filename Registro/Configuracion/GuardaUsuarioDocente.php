@@ -32,8 +32,8 @@
 		$bandera2 = 0;
 		
 		$sqlx = "SELECT EMAIL FROM usuarios WHERE EMAIL ='".$txtEmail."'";
-		$rsx  = mysql_query($sqlx,$conexion);
-		if(mysql_num_rows($rsx)!=0){
+		$rsx  = mysqli_query($conexion,$sqlx);
+		if(mysqli_num_rows($rsx)!=0){
 			$bandera2 = 1;
 		}
 		
@@ -44,7 +44,7 @@
 			
 			$sqls 	= "INSERT INTO usuarios(NOMBRE, APATERNO, AMATERNO,  EMAIL, PASSWORD, TIPO_USUARIO, ESTATUS)";
 			$sqls   = $sqls." VALUES ('".$txtNombre."','".$txtApaterno."','".$txtMaterno."','".$txtEmail."','".$txtPassword."','".$TipoUsuario."','0')";
-			mysql_query($sqls,$conexion);			
+			mysqli_query($conexion,$sqls);			
 			$mensaje = '<br/><div class="information-box round">'."Registros Guardados Correctamente</div>".$refresh;
 		}
 	}

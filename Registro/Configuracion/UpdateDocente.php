@@ -18,7 +18,7 @@
 	}else{
 				
 			$sqls 	= "UPDATE usuarios SET NOMBRE='".$txtNombre."', APATERNO='".$txtApaterno."', AMATERNO='".$txtMaterno."' WHERE ID='".$id."'";
-			mysql_query($sqls,$conexion);			
+			mysqli_query($conexion,$sqls);			
 			$mensaje = '<br/><div class="information-box round">'."Informacion Actualizada Correctamente</div>".$refresh;
 		
 	}

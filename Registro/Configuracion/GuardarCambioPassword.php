@@ -15,7 +15,7 @@
 	}else{
 			
 			$sql = "UPDATE usuarios SET PASSWORD='".$txtPass1."' WHERE ID='".$txtId."' ";
-			mysql_query($sql,$conexion);
+			mysqli_query($conexion,$sql);
 			$mensaje = '<br/><div class="information-box round">'."Registros Guardados Correctamente</div>";		
 	}
 	echo $mensaje;

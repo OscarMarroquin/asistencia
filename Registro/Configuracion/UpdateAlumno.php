@@ -23,7 +23,7 @@
 	}else{
 		
 			$sqls 	= "UPDATE alumnos SET NOMBRE='".$txtNombre."', APATERNO='".$txtApaterno."', AMATERNO = '".$txtMaterno."', SECCION='".$txtSeccion."',CARNET='".$txtCarnet."' WHERE ID='".$id."'";
-			mysql_query($sqls,$conexion);
+			mysqli_query($conexion,$sqls);
 			$mensaje = '<br/><div class="information-box round">'."Informacion Actualizada Correctamente</div>";
 			
 		

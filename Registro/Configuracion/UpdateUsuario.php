@@ -28,7 +28,7 @@
 			
 			$sqls 	= "UPDATE usuarios SET NOMBRE='".$txtNombre."', APATERNO='".$txtApaterno."', AMATERNO='".$txtMaterno."', SEXO='".$Sexo."', DIRECCION='".$txtDireccion."'";
 			$sqls   = $sqls.", TELEFONO='".$txtTelefono."' WHERE ID='".$txtId."'";	
-			mysql_query($sqls,$conexion);			
+			mysqli_query($conexion,$sqls);			
 			$mensaje = '<br/><div class="information-box round">'."Registros Actualizados Correctamente</div>".$refresh;
 		
 	}

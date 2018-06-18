@@ -32,12 +32,12 @@
 		}
 		if($idprepa==0 AND $control==0){
 			$sqlx = "SELECT ID FROM escuelas WHERE RFC='".$txtRFC."'";
-			$rsx  = mysql_query($sqlx,$conexion);
-			if(mysql_num_rows($rsx)!=0){
+			$rsx  = mysqli_query($conexion,$sqlx);
+			if(mysqli_num_rows($rsx)!=0){
 				$mensaje = '<br/><div class="error-box round">'."Error: RFC En uso</div>";
 			}else{				
 				$sqls 	= "INSERT INTO escuelas(NOMBRE,DIRECTOR,RFC,DIRECCION,TELEFONO,TURNO) VALUES ('".$txtEscuela."','".$txtDirector."','".$txtRFC."','".$txtDireccion."','".$txtTelefono."','".$turno."')";
-				mysql_query($sqls,$conexion);			
+				mysqli_query($conexion,$sqls);			
 				$mensaje = '<br/><div class="information-box round">'."Registros Guardados Correctamente</div>".$refresh;
 			}
 			
